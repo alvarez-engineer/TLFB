@@ -1,13 +1,4 @@
-2018-08-24 16:25:29,647 ERROR: Exception on /auth/login [POST] [in c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
-    context)
-  File "c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\sqlalchemy\engine\default.py", line 509, in do_execute
-    cursor.execute(statement, parameters)
-sqlite3.OperationalError: no such table: user
-
-The above exception was the direct cause of the following exception:
-
+2018-08-28 13:08:15,783 ERROR: Exception on /index [GET] [in c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
   File "c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -21,45 +12,49 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\flask\app.py", line 1799, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\pythonprograms\web_apps\Full_Bucket\app\auth\routes.py", line 19, in login
-    user = User.query.filter_by(username=form.username.data).first()
-  File "c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\sqlalchemy\orm\query.py", line 2888, in first
-    ret = list(self[0:1])
-  File "c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\sqlalchemy\orm\query.py", line 2680, in __getitem__
-    return list(res)
-  File "c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\sqlalchemy\orm\query.py", line 2988, in __iter__
-    return self._execute_and_instances(context)
-  File "c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\sqlalchemy\orm\query.py", line 3011, in _execute_and_instances
-    result = conn.execute(querycontext.statement, self._params)
-  File "c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\sqlalchemy\engine\base.py", line 948, in execute
-    return meth(self, multiparams, params)
-  File "c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\sqlalchemy\sql\elements.py", line 269, in _execute_on_connection
-    return connection._execute_clauseelement(self, multiparams, params)
-  File "c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\sqlalchemy\engine\base.py", line 1060, in _execute_clauseelement
-    compiled_sql, distilled_params
-  File "c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\sqlalchemy\engine\base.py", line 1200, in _execute_context
-    context)
-  File "c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\sqlalchemy\engine\base.py", line 1413, in _handle_dbapi_exception
-    exc_info
-  File "c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\sqlalchemy\util\compat.py", line 265, in raise_from_cause
-    reraise(type(exception), exception, tb=exc_tb, cause=cause)
-  File "c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\sqlalchemy\util\compat.py", line 248, in reraise
+  File "c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\pythonprograms\web_apps\TLFB\app\main\routes.py", line 46, in index
+    prev_url=prev_url)
+  File "c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\jinja2\_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
-  File "c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
-    context)
-  File "c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\sqlalchemy\engine\default.py", line 509, in do_execute
-    cursor.execute(statement, parameters)
-sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: user [SQL: 'SELECT user.id AS user_id, user.username AS user_username, user.email AS user_email, user.password_hash AS user_password_hash, user.about_me AS user_about_me, user.last_seen AS user_last_seen \nFROM user \nWHERE user.username = ?\n LIMIT ? OFFSET ?'] [parameters: ('adrian', 1, 0)] (Background on this error at: http://sqlalche.me/e/e3q8)
-2018-08-24 16:29:13,451 ERROR: Exception on /auth/register [POST] [in c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
-    context)
-  File "c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\sqlalchemy\engine\default.py", line 509, in do_execute
-    cursor.execute(statement, parameters)
-sqlite3.OperationalError: no such table: user
-
-The above exception was the direct cause of the following exception:
-
+  File "C:\pythonprograms\web_apps\TLFB\app\templates\index.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "C:\pythonprograms\web_apps\TLFB\app\templates\base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block "doc"
+    {%- block html %}
+  File "c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
+    {% block body -%}
+  File "c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 21, in block "body"
+    {% block navbar %}
+  File "C:\pythonprograms\web_apps\TLFB\app\templates\base.html", line 23, in block "navbar"
+    <li><a href="{{ url_for('quest.initial_questions.')}}">{{_('Questions')}}</a> </li>
+  File "c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\flask\helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\flask\app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\flask\helpers.py", line 345, in url_for
+    force_external=external)
+  File "c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'quest.initial_questions.'. Did you mean 'quest.initial_questions' instead?
+2018-08-28 13:08:41,954 INFO: Microblog startup [in C:\pythonprograms\web_apps\TLFB\app\__init__.py:77]
+2018-08-28 13:08:48,937 ERROR: Exception on /quest/initial_questions [GET] [in c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
   File "c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -73,44 +68,7 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\flask\app.py", line 1799, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\pythonprograms\web_apps\Full_Bucket\app\auth\routes.py", line 42, in register
-    if form.validate_on_submit():
-  File "c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\flask_wtf\form.py", line 101, in validate_on_submit
-    return self.is_submitted() and self.validate()
-  File "c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\wtforms\form.py", line 310, in validate
-    return super(Form, self).validate(extra)
-  File "c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\wtforms\form.py", line 152, in validate
-    if not field.validate(self, extra):
-  File "c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\wtforms\fields\core.py", line 206, in validate
-    stop_validation = self._run_validation_chain(form, chain)
-  File "c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\wtforms\fields\core.py", line 226, in _run_validation_chain
-    validator(form, self)
-  File "C:\pythonprograms\web_apps\Full_Bucket\app\auth\forms.py", line 25, in validate_username
-    user = User.query.filter_by(username=username.data).first()
-  File "c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\sqlalchemy\orm\query.py", line 2888, in first
-    ret = list(self[0:1])
-  File "c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\sqlalchemy\orm\query.py", line 2680, in __getitem__
-    return list(res)
-  File "c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\sqlalchemy\orm\query.py", line 2988, in __iter__
-    return self._execute_and_instances(context)
-  File "c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\sqlalchemy\orm\query.py", line 3011, in _execute_and_instances
-    result = conn.execute(querycontext.statement, self._params)
-  File "c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\sqlalchemy\engine\base.py", line 948, in execute
-    return meth(self, multiparams, params)
-  File "c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\sqlalchemy\sql\elements.py", line 269, in _execute_on_connection
-    return connection._execute_clauseelement(self, multiparams, params)
-  File "c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\sqlalchemy\engine\base.py", line 1060, in _execute_clauseelement
-    compiled_sql, distilled_params
-  File "c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\sqlalchemy\engine\base.py", line 1200, in _execute_context
-    context)
-  File "c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\sqlalchemy\engine\base.py", line 1413, in _handle_dbapi_exception
-    exc_info
-  File "c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\sqlalchemy\util\compat.py", line 265, in raise_from_cause
-    reraise(type(exception), exception, tb=exc_tb, cause=cause)
-  File "c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\sqlalchemy\util\compat.py", line 248, in reraise
-    raise value.with_traceback(tb)
-  File "c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
-    context)
-  File "c:\users\adrian\appdata\local\programs\python\python36\lib\site-packages\sqlalchemy\engine\default.py", line 509, in do_execute
-    cursor.execute(statement, parameters)
-sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: user [SQL: 'SELECT user.id AS user_id, user.username AS user_username, user.email AS user_email, user.password_hash AS user_password_hash, user.about_me AS user_about_me, user.last_seen AS user_last_seen \nFROM user \nWHERE user.username = ?\n LIMIT ? OFFSET ?'] [parameters: ('adrian', 1, 0)] (Background on this error at: http://sqlalche.me/e/e3q8)
+  File "C:\pythonprograms\web_apps\TLFB\app\quest\routes.py", line 18, in initial_questions
+    next_url=next_url, prev_url=prev_url)
+NameError: name 'next_url' is not defined
+2018-08-28 13:09:49,253 INFO: Microblog startup [in C:\pythonprograms\web_apps\TLFB\app\__init__.py:77]

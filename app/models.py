@@ -93,3 +93,14 @@ class Post(db.Model):
 
     def __repr__(self):
         return '<Post {}>'.format(self.body)
+
+class Records(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    subject = db.Column(db.String(32))
+    start = db.Column(db.DateTime)
+    end = db.Column(db.DateTime)
+    days = db.Column(db.Integer)
+    alcohol = db.Column(db.Boolean)
+    marijuana = db.Column(db.Boolean)
+    tobacco = db.Column(db.Boolean)
+    other = db.Column(db.Boolean)

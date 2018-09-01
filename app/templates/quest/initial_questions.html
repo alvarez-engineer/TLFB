@@ -1,0 +1,26 @@
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+  <p>Study ID holder</p><br>
+  <p>Date visit run holder</p><br>
+  <p>Administrator</p><br>
+  <p>Date of last visit</p><br>
+  <p># of days elapsed, calulation</p><br>
+
+  <br>
+  {{ wtf.quick_form(form) }}
+  <br>
+  <p>1. Have you had a drink of alcohol since (date of last visit?)</p><br>
+  <p>Yes/No</p><br>
+  <p>2. Have you used marijuana since (date of last visit?)</p><br>
+  <p>Yes/No</p><br>
+  <p>3. Have you tobaco/nicotine since (date of last visit?)</p><br>
+  <p>Yes/No</p><br>
+  <p>4. Have you used any other substances (other than above) that were not prescribed to you since (date of last visit?)</p><br>
+  <p>Yes/No</p><br>
+  <p>1. Have you had a drink of alcohol since (date of last visit?)</p><br>
+  <p>Yes/No</p><br>
+
+  <br>
+  <p>Submit button</p>
+{% endblock %}
