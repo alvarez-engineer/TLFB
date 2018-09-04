@@ -1,0 +1,36 @@
+<p>The page is working</p>
+{% for record in record %}
+    <table>
+        <tr>
+            {{ record.id }}
+        </tr>
+        <tr>
+            {{ record.study }}
+        </tr>
+        <tr>
+            {{ record.subject }}
+        </tr>
+        <tr>
+            {{ record.start }}
+        </tr>
+        <tr>
+            {{ record.end }}
+        </tr>
+        <tr>
+            {{ record.days }}
+        </tr>
+        <tr>
+            {{ record.alcohol }}
+        </tr>
+        <tr>
+            {{ record.marijuana }}
+        </tr>
+        <tr>
+            {{ record.tobacco }}
+        </tr>
+        <tr>
+            {{ record.other }}
+        </tr>
+    </table>
+
+{% endfor %}

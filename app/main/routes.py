@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, date
 from flask import render_template, flash, redirect, url_for, request, g, \
     jsonify, current_app
 from flask_login import current_user, login_required
@@ -15,6 +15,7 @@ from app.main import bp
 def before_request():
     if current_user.is_authenticated:
         current_user.last_seen = datetime.utcnow()
+        current_user.today = date.today()
         db.session.commit()
     g.locale = str(get_locale())
 

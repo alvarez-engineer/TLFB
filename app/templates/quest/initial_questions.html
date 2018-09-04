@@ -1,26 +1,31 @@
+{% extends "base.html" %}
 {% import 'bootstrap/wtf.html' as wtf %}
 
 {% block app_content %}
-  <p>Study ID holder</p><br>
-  <p>Date visit run holder</p><br>
-  <p>Administrator</p><br>
-  <p>Date of last visit</p><br>
-  <p># of days elapsed, calulation</p><br>
-
-  <br>
-  {{ wtf.quick_form(form) }}
-  <br>
-  <p>1. Have you had a drink of alcohol since (date of last visit?)</p><br>
-  <p>Yes/No</p><br>
-  <p>2. Have you used marijuana since (date of last visit?)</p><br>
-  <p>Yes/No</p><br>
-  <p>3. Have you tobaco/nicotine since (date of last visit?)</p><br>
-  <p>Yes/No</p><br>
-  <p>4. Have you used any other substances (other than above) that were not prescribed to you since (date of last visit?)</p><br>
-  <p>Yes/No</p><br>
-  <p>1. Have you had a drink of alcohol since (date of last visit?)</p><br>
-  <p>Yes/No</p><br>
-
-  <br>
-  <p>Submit button</p>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <p>{{_('Subject ID: %(subject)s', subject=subject)}}</p>
+        </div>
+        <div class="col-sm-4">
+            <p>{{_('Administrator: %(admin)s', admin=current_user.username)}}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <p>{{_('Date Selected: %(today)s', today=start)}}</p>
+        </div>
+        <div class="col-sm-4">
+            <p>{{_('Date of last visit: %(end)s ', end=end)}}</p>
+        </div>
+        <div class="col-sm-4">
+            <p>{{_('Number of days elapsed: %(days)i ', days=days)}}</p>
+        </div>
+    </div>
+</div>
+    <br>
+    <h1>{{_('Substance use questions regarding the last %(days)i days.', days=days)}}</h1>
+    <br>
+    {{ wtf.quick_form(form) }}
+    <br>
 {% endblock %}

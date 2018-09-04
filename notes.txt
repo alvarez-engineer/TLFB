@@ -2,6 +2,7 @@ Database is in app\models.py
 Activate blueprints with app\__init__.py
 any new folder needs a \__init__.py to initialize it
 link them with url_for('folder.form')
+
 Database migrations - flask db migrate -m "text" then flask db upgrade
 
 
@@ -10,3 +11,8 @@ Figure out the submit to start button for NewRecordForm
 
 
 timelinefollowback.com/TLFB/TLFBv1.0.0/rest
+
+pip install -r requirements.txt for all modules
+
+
+new_records could change the ready to How are we running today?

@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, date
 from hashlib import md5
 from time import time
 from flask import current_app
@@ -96,9 +96,10 @@ class Post(db.Model):
 
 class Records(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    subject = db.Column(db.String(32))
-    start = db.Column(db.DateTime)
-    end = db.Column(db.DateTime)
+    study = db.Column(db.String(140), unique=False)
+    subject = db.Column(db.String(140))
+    start = db.Column(db.Date)
+    end = db.Column(db.Date)
     days = db.Column(db.Integer)
     alcohol = db.Column(db.Boolean)
     marijuana = db.Column(db.Boolean)

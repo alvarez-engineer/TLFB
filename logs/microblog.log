@@ -82,3 +82,5 @@ NameError: name 'next_url' is not defined
 2018-08-28 16:52:47,212 INFO: Microblog startup [in C:\pythonprograms\web_apps\TLFB\app\__init__.py:77]
 2018-08-28 16:53:10,021 INFO: Microblog startup [in C:\pythonprograms\web_apps\TLFB\app\__init__.py:77]
 2018-08-30 19:11:42,034 INFO: Microblog startup [in C:\pythonprograms\web_apps\TLFB\app\__init__.py:77]
+2018-09-02 14:38:52,566 INFO: Microblog startup [in C:\pythonPrograms\TLFB\app\__init__.py:77]
+2018-09-03 11:19:59,507 INFO: Microblog startup [in C:\pythonPrograms\TLFB\app\__init__.py:80]

@@ -46,6 +46,12 @@ def create_app(config_class=Config):
     from app.quest import bp as quest_bp
     app.register_blueprint(quest_bp, url_prefix='/quest')
 
+    from app.calendar import bp as calendar_bp
+    app.register_blueprint(calendar_bp, url_prefix='/calendar')
+
+    from app.database import bp as database_bp
+    app.register_blueprint(database_bp, url_prefix='/database')
+
     if not app.debug and not app.testing:
         if app.config['MAIL_SERVER']:
             auth = None
