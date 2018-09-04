@@ -16,3 +16,6 @@ pip install -r requirements.txt for all modules
 
 
 new_records could change the ready to How are we running today?
+
+Need settings attached to accounts to plan for different modules (alcohol, Mj,
+legal and illegal drugs)
